@@ -12,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="ToDoListWithFarebase" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -54,7 +54,6 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YE4-mV-IbE"/>
-                                            <segue destination="nA4-jS-JdC" kind="show" identifier="tasksSegue" id="xF8-Pm-xqV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qad-EU-vun">
@@ -93,6 +92,7 @@
                         <outlet property="emailTextField" destination="gP9-sQ-aYu" id="2om-od-D8W"/>
                         <outlet property="passwordTextField" destination="8hB-6g-8Bj" id="awn-WC-leW"/>
                         <outlet property="warningLabel" destination="4yr-oI-H0q" id="hgH-89-Tr5"/>
+                        <segue destination="nA4-jS-JdC" kind="show" identifier="tasksSegue" id="kiE-V3-uaX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -139,6 +139,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="O35-ki-JKk">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="GgJ-hr-hZe">
+                            <connections>
+                                <action selector="signOutTapped:" destination="r13-J4-tUm" id="q4X-Tq-MT5"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="58d-Hx-jJQ">
                             <connections>
                                 <action selector="addTapped:" destination="r13-J4-tUm" id="O6e-nZ-Uph"/>
